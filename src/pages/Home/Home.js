@@ -1,30 +1,39 @@
 import React, { Component } from "react";
 import axios from "axios";
-export default class Home extends Component {
-  state = {
-    arrFilms: [],
-  };
+import { connect } from "react-redux";
+import { layDanhSachPhimAction } from "../../action/PhimAction";
+class Home extends Component {
+  // state = {
+  //   arrFilms: [],
+  // };
   loadFilm = () => {
     //Dung axios goi thong tin tu backed ve qua api
-    const promise = axios({
-      url:
-        "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01 ",
-      method: "GET",
-    });
-    //xu ly thanh cong
-    promise.then((result) => {
-      console.log("resul", result.data);
-      this.setState({
-        arrFilms: result.data,
-      });
-    });
-    // xu ly khi request loi
-    promise.catch((error) => {
-      console.log("err", error.response.data);
-    });
+    // const promise = axios({
+    //   url:
+    //     "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01 ",
+    //   method: "GET",
+    // });
+    // //xu ly thanh cong
+    // promise.then((result) => {
+    //   console.log("resul", result.data);
+    //   // this.setState({
+    //   //   arrFilms: result.data,
+    //   // });
+
+    //   // lấy dữ liệu về => dípatch lên reducẻ
+    //   this.props.dispatch({
+    //     type: "LAY_DANH_SACH_PHIM",
+    //     mangPhim: result.data,
+    //   });
+    // });
+    // // xu ly khi request loi
+    // promise.catch((error) => {
+    //   console.log("err", error.response.data);
+    // });
+    this.props.dispatch(layDanhSachPhimAction());
   };
   renderFilms = () => {
-    return this.state.arrFilms.map((film, index) => {
+    return this.props.mangPhim.map((film, index) => {
       return (
         <div className="col-4" key={index}>
           <div className="card text-white bg-dark">
@@ -58,3 +67,7 @@ export default class Home extends Component {
     this.loadFilm();
   }
 }
+const mapStateToProps = (state) => ({
+  mangPhim: state.PhimReducer.mangPhim,
+});
+export default connect(mapStateToProps)(Home);

@@ -6,12 +6,14 @@ import Contact from "./Contact/Contact";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Header from "./Components/Header/Header";
+import Loading from "./Components/Loading/Loading";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
+        <Loading />
         {/* exact so sanh chinh xac /home moi ra /home chu khong phai vua home
         vua / . switch break khi bi trung */}
         <Switch>
