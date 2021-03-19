@@ -1,5 +1,5 @@
 const stateDefault = {
-  loading: true,
+  loading: false,
 };
 export const LoadingReducer = (state = stateDefault, action) => {
   switch (action.type) {

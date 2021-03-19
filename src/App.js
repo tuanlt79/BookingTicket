@@ -7,6 +7,9 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Header from "./Components/Header/Header";
 import Loading from "./Components/Loading/Loading";
+import Lifecycle from "./pages/Lifecycle/Lifecycle";
+import UseStateHook from "./pages/Hooks/UseStateHook";
+import BaiTapChonXe from "./pages/Hooks/BaiTapChonXe";
 
 function App() {
   return (
@@ -22,6 +25,21 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
+          <Route
+            exact
+            path="/lifecycle"
+            render={(propsRoute) => {
+              // tham số chứa các  props thẻ route
+              return (
+                <div>
+                  <h3>Component lifecycle</h3>
+                  <Lifecycle {...propsRoute} />
+                </div>
+              );
+            }}
+          ></Route>
+          <Route exact path="/usestatedemo" component={UseStateHook} />
+          <Route exact path="/baichonxe" component={BaiTapChonXe} />
           {/* root mac dinh de duoi cuoi cung o ung dung */}
           <Route exact path="/" component={Home} />
         </Switch>

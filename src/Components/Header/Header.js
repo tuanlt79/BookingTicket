@@ -60,6 +60,16 @@ export default class Header extends Component {
                   Register
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  activeStyle={{ fontWeight: "bold" }}
+                  activeClassName="bg-dark text-light"
+                  className="nav-link"
+                  to="/lifecycle"
+                >
+                  Lifecycle
+                </NavLink>
+              </li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -69,15 +79,15 @@ export default class Header extends Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  Hook
                 </a>
                 <div className="dropdown-menu" aria-labelledby="dropdownId">
-                  <a className="dropdown-item" href="#">
-                    Action 1
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Action 2
-                  </a>
+                  <NavLink className="dropdown-item" to="/usestatedemo">
+                    Use State
+                  </NavLink>
+                  <NavLink className="dropdown-item" to="baichonxe">
+                    Bài Tập Chọn Xe
+                  </NavLink>
                 </div>
               </li>
             </ul>
