@@ -24,3 +24,20 @@ export const layDanhSachPhimAction = () => {
     }, 1000);
   };
 };
+// lấy thông tin chi tiết phim
+export const layThongTinChiTietPhimAction = (maPhim) => {
+  return async (dispatch) => {
+    try {
+      let result = await axios({
+        url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`,
+        method: "GET",
+      });
+      dispatch({
+        type: "LAY_CHI_TIET_PHIM",
+        chiTietPhim: result.data,
+      });
+    } catch (errors) {
+      console.log(errors);
+    }
+  };
+};

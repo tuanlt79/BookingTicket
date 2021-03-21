@@ -50,7 +50,7 @@ export default class Header extends Component {
                 >
                   Login
                 </NavLink>
-              </li>{" "}
+              </li>
               <li className="nav-item">
                 <NavLink
                   activeClassName="bg-dark text-light"
@@ -87,6 +87,12 @@ export default class Header extends Component {
                   </NavLink>
                   <NavLink className="dropdown-item" to="baichonxe">
                     Bài Tập Chọn Xe
+                  </NavLink>
+                  <NavLink className="dropdown-item" to="/useeffecthome">
+                    Use Effect Hook
+                  </NavLink>
+                  <NavLink className="dropdown-item" to="/reduxhook">
+                    Redux Hook Home
                   </NavLink>
                 </div>
               </li>

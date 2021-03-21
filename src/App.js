@@ -10,6 +10,9 @@ import Loading from "./Components/Loading/Loading";
 import Lifecycle from "./pages/Lifecycle/Lifecycle";
 import UseStateHook from "./pages/Hooks/UseStateHook";
 import BaiTapChonXe from "./pages/Hooks/BaiTapChonXe";
+import UseEffectHome from "./pages/Hooks/UseEffectHome";
+import ReduxHookHome from "./pages/Hooks/ReduxHookHome";
+import Details from "./pages/Details/Details";
 
 function App() {
   return (
@@ -40,6 +43,9 @@ function App() {
           ></Route>
           <Route exact path="/usestatedemo" component={UseStateHook} />
           <Route exact path="/baichonxe" component={BaiTapChonXe} />
+          <Route exact path="/useeffecthome" component={UseEffectHome} />
+          <Route exact path="/reduxhook" component={ReduxHookHome} />
+          <Route exact path="/detail/:id" component={Details} />
           {/* root mac dinh de duoi cuoi cung o ung dung */}
           <Route exact path="/" component={Home} />
         </Switch>

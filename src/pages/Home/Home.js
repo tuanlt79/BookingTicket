@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { layDanhSachPhimAction } from "../../action/PhimAction";
+import { NavLink } from "react-router-dom";
 class Home extends Component {
   // state = {
   //   arrFilms: [],
@@ -40,6 +41,9 @@ class Home extends Component {
             <img className="card-img-top" src={film.hinhAnh} alt />
             <div className="card-body">
               <h4 className="card-title">{film.tenPhim}</h4>
+              <NavLink className="btn btn-success" to={`detail/${film.maPhim}`}>
+                Dat Ve
+              </NavLink>
               <p className="card-text">{film.moTa}</p>
             </div>
           </div>
