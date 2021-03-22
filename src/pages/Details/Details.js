@@ -30,7 +30,6 @@ export default function Details(props) {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Exercitationem explicabo cum voluptatem saepe, doloremque harum
                 unde dolore praesentium illo eius corrupti eaque recusandae iure
-                placeat, earum, amet vel necessitatibus mollitia.
                 <th></th>
               </tr>
             </thead>
