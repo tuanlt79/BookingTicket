@@ -2,6 +2,7 @@ import React from "react";
 import { Route } from "react-router";
 export const AdminTemplate = (props) => {
   let { Component, ...restParam } = props;
+  console.log(props);
   return (
     <Route
       {...restParam}
