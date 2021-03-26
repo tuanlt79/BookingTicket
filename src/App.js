@@ -13,21 +13,27 @@ import BaiTapChonXe from "./pages/Hooks/BaiTapChonXe";
 import UseEffectHome from "./pages/Hooks/UseEffectHome";
 import ReduxHookHome from "./pages/Hooks/ReduxHookHome";
 import Details from "./pages/Details/Details";
+import HookUseCallBack from "./pages/Hooks/HookUseCallBack";
+import HookUseMemo from "./pages/Hooks/HookUseMemo";
+import UseRef from "./pages/Hooks/UseRef";
+import ParentComponent from "./pages/HOC/ParentComponent";
+import { HomTemplate } from "./templates/HomeTemplate";
+import { AdminTemplate } from "./templates/AdminTemplate";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
         <Loading />
         {/* exact so sanh chinh xac /home moi ra /home chu khong phai vua home
         vua / . switch break khi bi trung */}
         <Switch>
           {/* <p className="text_color_red ">TEst</p> */};
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
+          <HomTemplate exact path="/home" Component={Home} />
+          <HomTemplate exact path="/home" Component={Home} />
+          <HomTemplate exact path="/contact" Component={Contact} />
+          <AdminTemplate exact path="/login" Component={Login} />
+          <HomTemplate exact path="/register" component={Register} />
           <Route
             exact
             path="/lifecycle"
@@ -41,11 +47,15 @@ function App() {
               );
             }}
           ></Route>
-          <Route exact path="/usestatedemo" component={UseStateHook} />
-          <Route exact path="/baichonxe" component={BaiTapChonXe} />
-          <Route exact path="/useeffecthome" component={UseEffectHome} />
-          <Route exact path="/reduxhook" component={ReduxHookHome} />
-          <Route exact path="/detail/:id" component={Details} />
+          <HomTemplate exact path="/usestatedemo" component={UseStateHook} />
+          <HomTemplate exact path="/baichonxe" component={BaiTapChonXe} />
+          <HomTemplate exact path="/useeffecthome" component={UseEffectHome} />
+          <HomTemplate exact path="/reduxhook" component={ReduxHookHome} />
+          <HomTemplate exact path="/usecallback" component={HookUseCallBack} />
+          <HomTemplate exact path="/detail/:id" component={Details} />
+          <HomTemplate exact path="/usememo" component={HookUseMemo} />
+          <HomTemplate exact path="/useref" component={UseRef} />
+          <HomTemplate path="/demoprops" component={ParentComponent} />
           {/* root mac dinh de duoi cuoi cung o ung dung */}
           <Route exact path="/" component={Home} />
         </Switch>
@@ -55,3 +65,4 @@ function App() {
 }
 
 export default App;
+// connect ()(App)
