@@ -19,6 +19,7 @@ import UseRef from "./pages/Hooks/UseRef";
 import ParentComponent from "./pages/HOC/ParentComponent";
 import { HomTemplate } from "./templates/HomeTemplate";
 import { AdminTemplate } from "./templates/AdminTemplate";
+import Checkout from "./pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
           <HomTemplate exact path="/usememo" component={HookUseMemo} />
           <HomTemplate exact path="/useref" component={UseRef} />
           <HomTemplate path="/demoprops" component={ParentComponent} />
+          <HomTemplate path="/checkout/:id" component={Checkout} />
           {/* root mac dinh de duoi cuoi cung o ung dung */}
           <Route exact path="/" component={Home} />
         </Switch>

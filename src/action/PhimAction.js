@@ -41,3 +41,21 @@ export const layThongTinChiTietPhimAction = (maPhim) => {
     }
   };
 };
+
+export const layThongTinPhongVeAction = (maLichChieu) => {
+  console.log({ maLichChieu });
+  return async (dispatch) => {
+    try {
+      let result = await axios({
+        url: `https://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${maLichChieu}`,
+        method: "GET",
+      });
+      dispatch({
+        type: "LAY_THONG_TIN_PHONG_VE",
+        thongTinPhongVe: result.data,
+      });
+    } catch (errors) {
+      console.log({ errors });
+    }
+  };
+};
