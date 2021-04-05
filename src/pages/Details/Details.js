@@ -12,6 +12,9 @@ export default function Details(props) {
     let { id } = props.match.params;
     //goi action truyen vao id phim
     dispatch(layThongTinChiTietPhimAction(id));
+    return () => {
+      dispatch({ type: "resetDSG" });
+    };
   }, []);
   console.log("chiTietPhim", chiTietPhim);
   return (

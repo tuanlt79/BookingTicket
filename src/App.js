@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.scss";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Contact from "./Contact/Contact";
 import Login from "./pages/Login/Login";
@@ -21,9 +21,13 @@ import { HomTemplate } from "./templates/HomeTemplate";
 import { AdminTemplate } from "./templates/AdminTemplate";
 import Checkout from "./pages/Checkout/Checkout";
 
+//import history
+import { createBrowserHistory } from "history";
+export const history = createBrowserHistory();
+
 function App() {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <div className="App">
         <Loading />
         {/* exact so sanh chinh xac /home moi ra /home chu khong phai vua home
@@ -53,16 +57,16 @@ function App() {
           <HomTemplate exact path="/useeffecthome" component={UseEffectHome} />
           <HomTemplate exact path="/reduxhook" component={ReduxHookHome} />
           <HomTemplate exact path="/usecallback" component={HookUseCallBack} />
-          <HomTemplate exact path="/detail/:id" component={Details} />
+          <HomTemplate exact path="/detail/:id" Component={Details} />
           <HomTemplate exact path="/usememo" component={HookUseMemo} />
           <HomTemplate exact path="/useref" component={UseRef} />
-          <HomTemplate path="/demoprops" component={ParentComponent} />
-          <HomTemplate path="/checkout/:id" component={Checkout} />
+          <HomTemplate path="/demoprops" Component={ParentComponent} />
+          <HomTemplate path="/checkout/:id" Component={Checkout} />
           {/* root mac dinh de duoi cuoi cung o ung dung */}
-          <Route exact path="/" component={Home} />
+          <HomTemplate exact path="/" Component={Home} />
         </Switch>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
