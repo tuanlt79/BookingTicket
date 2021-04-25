@@ -12,7 +12,7 @@ export const dangNhapAction = (nguoiDung) => {
       });
       //Lấy giá trị api gửi về lưu vào localstoảge
       console.log(result.data);
-      localStorage.setItem("token", result.data.accessToken);
+      localStorage.setItem("accessToken", result.data.accessToken);
       localStorage.setItem("taiKhoan", JSON.stringify(result.data));
       // đăng nhập thành công chuyển hướng về home
       history.push("/");
